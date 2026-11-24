@@ -1,6 +1,6 @@
 # Ejercicios de SQL
 
-Repositorio de ejercicios de SQL realizados durante el primer curso del ciclo **1GS - Formación Profesional**.
+Repositorio de ejercicios de SQL realizados durante el primer curso del ciclo **1GS - DAM**.
 
 Incluye scripts para crear distintas bases de datos y ejercicios organizados por nivel y tipo de consulta.
 
