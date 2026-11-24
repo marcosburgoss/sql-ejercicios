@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS colegio CHARACTER SET utf8mb4;
+USE colegio;
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/

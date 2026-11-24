@@ -56,6 +56,79 @@ Los scripts están escritos principalmente para **MySQL/MariaDB**.
 
 En sistemas Windows también puedes importar los archivos directamente desde el cliente de base de datos que utilices.
 
+## Uso con Docker
+
+Docker permite crear todas las bases de datos automáticamente y trabajar con ellas sin instalar MySQL directamente en el sistema.
+
+Requisitos:
+
+- Docker Desktop
+- Docker Compose
+
+Desde la raíz del repositorio, inicia los contenedores:
+
+```bash
+docker compose up -d
+```
+
+La primera ejecución puede tardar mientras Docker descarga las imágenes y carga los scripts de `bbdd/`.
+
+Abre Adminer en <http://localhost:8080> con estos datos:
+
+| Campo | Valor |
+|---|---|
+| Sistema | MySQL |
+| Servidor | `mysql` |
+| Usuario | `alumno` |
+| Contraseña | `alumno1234` |
+| Base de datos | Selecciona una base cargada |
+
+También puedes conectarte desde la terminal:
+
+```bash
+docker compose exec mysql mysql -ualumno -palumno1234 tienda
+```
+
+Para ver las bases de datos disponibles:
+
+```bash
+docker compose exec mysql mysql -ualumno -palumno1234 -e "SHOW DATABASES;"
+```
+
+Cada vez que ejecutes una consulta:
+
+```sql
+USE tienda;
+SELECT * FROM producto;
+```
+
+Las contraseñas y los puertos pueden modificarse copiando `.env.example` como `.env` antes de iniciar el entorno:
+
+```bash
+Copy-Item .env.example .env
+```
+
+Comandos útiles:
+
+```bash
+# Ver el estado y los logs
+docker compose ps
+docker compose logs -f mysql
+
+# Detener los contenedores conservando las bases de datos
+docker compose stop
+
+# Volver a iniciarlos
+docker compose start
+
+# Detener y eliminar los contenedores
+docker compose down
+
+# Eliminar también los datos y recrear todas las bases de datos
+docker compose down -v
+docker compose up -d
+```
+
 ## Ejemplo
 
 Para trabajar con la base de datos de Tienda:

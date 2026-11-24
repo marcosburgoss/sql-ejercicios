@@ -1,3 +1,5 @@
+SET NAMES utf8mb4;
+
 DROP DATABASE IF EXISTS ventas;
 CREATE DATABASE ventas CHARACTER SET utf8mb4;
 USE ventas;
