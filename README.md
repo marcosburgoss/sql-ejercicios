@@ -140,7 +140,3 @@ USE tienda;
 ```
 
 Después puedes ejecutar las consultas de [`consultas-avanzadas/1.Tienda_CompExt.sql`](consultas-avanzadas/1.Tienda_CompExt.sql) o [`consultas-avanzadas/1.Tienda_CompInt.sql`](consultas-avanzadas/1.Tienda_CompInt.sql).
-
-## Autor
-
-Ejercicios realizados por **Marcos Burgos**.
